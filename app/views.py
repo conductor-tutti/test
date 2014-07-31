@@ -1,6 +1,8 @@
 #-*-coding:utf-8-*-
 from flask import render_template, request, redirect, url_for, current_app
 from googledb import Files
+from app import app
+from uploadpic import Picture
 
 import urllib2
 import sys
@@ -12,6 +14,20 @@ sys.setdefaultencoding("UTF8")
 @app.route("/index")
 def index():
     return render_template("index.html")
+
+@app.route("/test_picdata", methods=["GET", "POST"])
+
+def test_picdata():
+    if request.method == "POST":
+        file = request.files.get("file")
+        filestream = file.read()
+        picture = Picture()
+        picture.setPicture(filestream)
+        picture.setMetadata({})
+        picture.put()
+        return "Great!"
+    else:
+       return render_template("test_picdata.html")
 
 @app.route("/update", methods=["GET", "POST"])
 def db_update():

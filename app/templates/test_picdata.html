@@ -1,13 +1,15 @@
 {% extends "head.html" %}
 {% block head %}
-<title>이희원</title>
+<title>Show me my pic data</title>
 {% endblock %}
 
 {% block body %}
+<div class="container">
 <fieldset>
-	<p>Upload a picture you want to get metadata from.</p>
+	<h1>Upload a picture you want to get metadata from.</h1>
 	<form action="" enctype="multipart/form-data" method="POST">
 		<input type="file" name="upload_file"
 	</form>
 </fieldset>
+</div>
 {% endblock %}
