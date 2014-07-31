@@ -1,15 +1,24 @@
 {% extends "head.html" %}
 {% block head %}
+<link rel="stylesheet" type="text/css" href="/static/css/test_picdata.css">
 <title>Show me my pic data</title>
 {% endblock %}
 
 {% block body %}
 <div class="container">
-<fieldset>
-	<h1>Upload a picture you want to get metadata from.</h1>
-	<form action="" enctype="multipart/form-data" method="POST">
-		<input type="file" name="upload_file"
-	</form>
-</fieldset>
-</div>
-{% endblock %}
+	<div class="row">
+		<div class="col-md-12">
+			<h1>"Show me my pic data!"</h1>
+		</div>
+		<div class="row">
+			<h2>Upload a picture you want to get metadata from.</h2>
+			<fieldset>
+				<form class="navbar-form" action="picdata" enctype="multipart/form-data" method="POST">
+					<div class="form-group">
+						<input class="form-control" type="file" name="upload_file">
+					</div>
+				</form>
+			</fieldset>
+		</div>
+	</div>
+	{% endblock %}

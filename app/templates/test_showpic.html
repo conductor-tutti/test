@@ -1,0 +1,21 @@
+{% extends "head.html" %}
+{% block head %}
+	<meta charset="UTF-8">
+	<title>d</title>
+{% endblock %}
+{% block body %}
+	{% if picInfo %}
+	<div>
+		<img src="{{ picInfo["picURL"] }}" />
+	</div>
+	<div>
+		{% for key in picInfo["picMetadata"] %}
+		<h3>{{ key }}: {{ picInfo["picMetadata"][key] }}</h3>
+		{% endfor %}
+	</div>
+	{% else %}
+	<div>
+		<h3>No picture!</h3>
+	</div>
+	{% endif %}
+{% endblock %}
